@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, #f041ff 0%, #c00dd8 100%);
+    --gradient-accent: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+    --gradient-hero: linear-gradient(135deg, #fef5ff 0%, #fde9ff 50%, #fff7ed 100%);
+    --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    
+    /* Smooth Scrolling */
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-dark-900 antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Premium Button Styles */
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-accent {
+    @apply px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-outline {
+    @apply px-8 py-4 border-2 border-primary-500 text-primary-600 font-semibold rounded-full hover:bg-primary-50 transition-all duration-300 ease-out;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-out;
+  }
+  
+  .card-hover {
+    @apply hover:scale-105 hover:-translate-y-2;
+  }
+  
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  /* Custom Shadows */
+  .shadow-primary {
+    box-shadow: 0 10px 40px -10px rgba(240, 65, 255, 0.3);
+  }
+  
+  .shadow-accent {
+    box-shadow: 0 10px 40px -10px rgba(251, 146, 60, 0.3);
+  }
+}
+
+/* Custom Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
