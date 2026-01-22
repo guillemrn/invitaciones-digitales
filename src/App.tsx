@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Pricing from './components/Pricing'
@@ -9,10 +10,15 @@ import './index.css'
 function App() {
   return (
     <div className="min-h-screen">
+      <Navbar />
       <Hero />
-      <Features />
+      <div id="features">
+        <Features />
+      </div>
       <Pricing />
-      <Gallery />
+      <div id="gallery">
+        <Gallery />
+      </div>
       <CTA />
       <Footer />
     </div>
@@ -20,3 +26,4 @@ function App() {
 }
 
 export default App
+

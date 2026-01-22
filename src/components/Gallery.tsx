@@ -1,3 +1,5 @@
+import { Sparkles, Eye } from 'lucide-react';
+
 export default function Gallery() {
     const examples = [
         {
@@ -54,14 +56,15 @@ export default function Gallery() {
                         style={{ animationDelay: `${index * 100}ms` }}
                     >
                         {/* Gradient Background as Placeholder */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${example.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${example.gradient} opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500`}></div>
 
                         {/* Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         {/* Content */}
                         <div className="absolute inset-0 flex flex-col justify-end p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span className="text-sm font-semibold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                            <span className="text-sm font-semibold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 flex items-center gap-2">
+                                <Sparkles className="w-4 h-4" />
                                 {example.category}
                             </span>
                             <h3 className="text-xl md:text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
@@ -70,8 +73,8 @@ export default function Gallery() {
                         </div>
 
                         {/* Decorative Elements */}
-                        <div className="absolute top-4 right-4 w-12 h-12 border-2 border-white/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span className="text-white text-xl">✨</span>
+                        <div className="absolute top-4 right-4 w-12 h-12 border-2 border-white/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-90 transition-all duration-500">
+                            <Eye className="w-6 h-6 text-white" />
                         </div>
                     </div>
                 ))}
@@ -84,9 +87,10 @@ export default function Gallery() {
                 </p>
                 <button
                     onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="btn-primary"
+                    className="btn-primary group"
                 >
                     Ver Paquetes
+                    <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
                 </button>
             </div>
         </section>

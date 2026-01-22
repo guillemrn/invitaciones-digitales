@@ -1,3 +1,5 @@
+import { Check, ArrowRight, Info, Sparkles } from 'lucide-react';
+
 export default function Pricing() {
     const plans = [
         {
@@ -74,14 +76,15 @@ export default function Pricing() {
                 {plans.map((plan, index) => (
                     <div
                         key={index}
-                        className={`relative card p-8 flex flex-col animate-slide-up ${plan.highlighted ? 'card-hover shadow-2xl ring-4 ring-accent-400 scale-105' : ''
+                        className={`relative card p-8 flex flex-col animate-slide-up group shadow-luxury hover-luxury ${plan.highlighted ? 'ring-4 ring-accent-400 scale-105' : ''
                             }`}
                         style={{ animationDelay: `${index * 150}ms` }}
                     >
                         {/* Badge */}
                         {plan.badge && (
                             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                                <span className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                                <span className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
+                                    <Sparkles className="w-4 h-4" />
                                     {plan.badge}
                                 </span>
                             </div>
@@ -123,8 +126,10 @@ export default function Pricing() {
                         {/* Features */}
                         <ul className="space-y-4 mb-8 flex-grow">
                             {plan.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start gap-3">
-                                    <span className="text-primary-500 text-xl flex-shrink-0">✓</span>
+                                <li key={idx} className="flex items-start gap-3 group/item">
+                                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center mt-0.5 group-hover/item:bg-primary-500 group-hover/item:scale-110 transition-all duration-300">
+                                        <Check className="w-3 h-3 text-primary-600 group-hover/item:text-white transition-colors duration-300" strokeWidth={3} />
+                                    </div>
                                     <span className="text-dark-700 text-sm md:text-base">{feature}</span>
                                 </li>
                             ))}
@@ -133,11 +138,13 @@ export default function Pricing() {
                         {/* CTA Button */}
                         <button
                             onClick={() => window.open('https://wa.me/5215512345678?text=Hola! Me interesa el paquete ' + plan.name, '_blank')}
-                            className={`w-full ${plan.highlighted ? 'btn-accent' : 'btn-primary'
-                                } text-center`}
+                            className={`w-full ${plan.highlighted ? 'btn-accent animate-shimmer' : 'btn-primary'
+                                } text-center group/btn`}
                         >
                             Comenzar Ahora
+                            <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
                         </button>
+
 
                         {/* Note */}
                         {index === plans.length - 1 && (
@@ -151,15 +158,22 @@ export default function Pricing() {
 
             {/* Additional Info */}
             <div className="mt-16 text-center max-w-3xl mx-auto">
-                <div className="card p-8 glass">
-                    <h3 className="text-xl md:text-2xl font-bold text-dark-900 mb-4">
-                        ¿Necesitas factura?
-                    </h3>
-                    <p className="text-dark-600 leading-relaxed">
-                        Para operar formalmente, es necesario el registro fiscal ante el SAT.
-                        Al cotizar, te preguntaremos: <strong>"¿Requerirás factura?"</strong> Si la respuesta es afirmativa,
-                        el precio final será el costo del paquete más el 16% de IVA correspondiente.
-                    </p>
+                <div className="card p-8 glass group hover:shadow-xl transition-shadow duration-300">
+                    <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                            <Info className="w-6 h-6 text-primary-600" />
+                        </div>
+                        <div className="text-left">
+                            <h3 className="text-xl md:text-2xl font-bold text-dark-900 mb-4">
+                                ¿Necesitas factura?
+                            </h3>
+                            <p className="text-dark-600 leading-relaxed">
+                                Para operar formalmente, es necesario el registro fiscal ante el SAT.
+                                Al cotizar, te preguntaremos: <strong>"¿Requerirás factura?"</strong> Si la respuesta es afirmativa,
+                                el precio final será el costo del paquete más el 16% de IVA correspondiente.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

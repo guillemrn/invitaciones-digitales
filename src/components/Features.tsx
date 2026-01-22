@@ -1,34 +1,42 @@
+import { Palette, Smartphone, Zap, Gift, Sparkles, Heart } from 'lucide-react';
+
 export default function Features() {
     const features = [
         {
-            icon: '🎨',
+            icon: Palette,
             title: 'Diseño Personalizado',
             description: 'Cada invitación es única y refleja la esencia de tu evento. Trabajamos contigo para crear algo especial.',
+            color: 'text-primary-500',
         },
         {
-            icon: '📱',
+            icon: Smartphone,
             title: '100% Digital y Móvil',
             description: 'Optimizado para todos los dispositivos. Tus invitados pueden acceder desde cualquier lugar, en cualquier momento.',
+            color: 'text-accent-500',
         },
         {
-            icon: '⚡',
+            icon: Zap,
             title: 'Confirmación Instantánea',
             description: 'Sistema de RSVP integrado. Recibe confirmaciones en tiempo real y gestiona tu lista de invitados fácilmente.',
+            color: 'text-primary-600',
         },
         {
-            icon: '🎁',
+            icon: Gift,
             title: 'Experiencias Memorables',
             description: 'Más que una invitación, es una experiencia. Incluye mapas, itinerarios, galerías y mucho más.',
+            color: 'text-accent-600',
         },
         {
-            icon: '🌟',
+            icon: Sparkles,
             title: 'Tecnología Inteligente',
             description: 'Funciones avanzadas como contador regresivo, mesa de regalos, confirmación por grupos y personalización dinámica.',
+            color: 'text-primary-500',
         },
         {
-            icon: '💝',
+            icon: Heart,
             title: 'Servicio Premium',
             description: 'Acompañamiento personalizado en cada paso. Desde el diseño hasta el día de tu evento.',
+            color: 'text-accent-500',
         },
     ];
 
@@ -47,23 +55,26 @@ export default function Features() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {features.map((feature, index) => (
-                    <div
-                        key={index}
-                        className="card card-hover p-8 text-center group animate-slide-up"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                        <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                            {feature.icon}
+                {features.map((feature, index) => {
+                    const Icon = feature.icon;
+                    return (
+                        <div
+                            key={index}
+                            className="card card-hover p-8 text-center group animate-slide-up"
+                            style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                            <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-50 to-accent-50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                <Icon className={`w-8 h-8 ${feature.color} group-hover:scale-110 transition-transform duration-300`} strokeWidth={2} />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-bold text-dark-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                                {feature.title}
+                            </h3>
+                            <p className="text-dark-600 leading-relaxed">
+                                {feature.description}
+                            </p>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-dark-900 mb-3">
-                            {feature.title}
-                        </h3>
-                        <p className="text-dark-600 leading-relaxed">
-                            {feature.description}
-                        </p>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </section>
     );
