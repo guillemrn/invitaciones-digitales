@@ -10,21 +10,21 @@ export default {
         primary: {
           50: '#fef5ff',
           100: '#fde9ff',
-          200: '#fcd2ff',
-          300: '#fbadff',
-          400: '#f877ff',
-          500: '#f041ff',
-          600: '#e01ff5',
-          700: '#c00dd8',
-          800: '#9d0fb0',
-          900: '#81128e',
+          200: '#fbd4ff',
+          300: '#f9b0ff',
+          400: '#f57dff',
+          500: '#f041ff', // Main Purple
+          600: '#c00dd8',
+          700: '#9b09ad',
+          800: '#810c8e',
+          900: '#6b1074',
         },
         accent: {
           50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
+          100: '#ffefdb',
+          200: '#fedbad',
+          300: '#fdbd74',
+          400: '#fb923c', // Main Orange
           500: '#f97316',
           600: '#ea580c',
           700: '#c2410c',
@@ -42,7 +42,7 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
       },
       fontFamily: {
         display: ['Playfair Display', 'serif'],
@@ -50,10 +50,9 @@ export default {
         script: ['Dancing Script', 'cursive'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-in-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'float': 'float 3s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'float': 'float 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -61,16 +60,12 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-1000px 0' },
-          '100%': { backgroundPosition: '1000px 0' },
+          '50%': { transform: 'translateY(-20px)' },
         },
       },
     },

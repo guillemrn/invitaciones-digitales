@@ -1,81 +1,114 @@
-import { Sparkles, Zap, Heart, ChevronDown } from 'lucide-react';
+import { ChevronRight, Play, CheckCircle2, Bell } from 'lucide-react';
 
 export default function Hero() {
     const scrollToPricing = () => {
         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const scrollToDemos = () => {
+        document.getElementById('demos')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-                <div className="absolute top-40 right-20 w-96 h-96 bg-accent-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-400"></div>
-                <div className="absolute -bottom-20 left-1/2 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-600"></div>
-            </div>
+        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
+            {/* Minimalist Background Blobs */}
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-primary-50 rounded-full blur-3xl opacity-50 -z-10"></div>
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-accent-50 rounded-full blur-3xl opacity-50 -z-10"></div>
 
-            {/* Content */}
-            <div className="relative z-10 section-container text-center">
-                <div className="max-w-5xl mx-auto space-y-8 animate-fade-in">
-                    {/* Decorative Script Text */}
-                    <p className="font-script text-3xl md:text-4xl text-primary-600 animate-slide-up">
-                        Momentos Inolvidables
-                    </p>
-
-                    {/* Main Headline */}
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-dark-900 leading-tight animate-slide-up animation-delay-200">
-                        Invitaciones Digitales{' '}
-                        <span className="gradient-text">que Enamoran</span>
-                    </h1>
-
-                    {/* Subheadline */}
-                    <p className="text-xl md:text-2xl text-dark-600 max-w-3xl mx-auto leading-relaxed animate-slide-up animation-delay-400">
-                        Transforma tus eventos en experiencias memorables con invitaciones digitales premium.
-                        Diseño personalizado, tecnología inteligente y servicio excepcional.
-                    </p>
-
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-slide-up animation-delay-600">
-                        <button
-                            onClick={scrollToPricing}
-                            className="btn-accent text-lg group"
-                        >
-                            Ver Paquetes
-                            <ChevronDown className="inline-block ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-                        </button>
-                        <button
-                            onClick={() => window.open('https://wa.me/5215512345678', '_blank')}
-                            className="btn-outline text-lg group"
-                        >
-                            Contactar por WhatsApp
-                            <svg className="inline-block ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Trust Indicators */}
-                    <div className="pt-12 flex flex-wrap justify-center gap-8 text-dark-600 animate-fade-in animation-delay-800">
-                        <div className="flex items-center gap-2 group cursor-default">
-                            <Sparkles className="w-6 h-6 text-primary-500 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
-                            <span className="text-sm md:text-base">Diseños Únicos</span>
+            <div className="section-container">
+                <div className="flex flex-col lg:flex-row items-center gap-16">
+                    {/* Left Content */}
+                    <div className="flex-1 text-center lg:text-left space-y-8 animate-fade-in">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+                            </span>
+                            Nuevo: Gestión de RSVP en Tiempo Real
                         </div>
-                        <div className="flex items-center gap-2 group cursor-default">
-                            <Zap className="w-6 h-6 text-accent-500 group-hover:scale-110 transition-all duration-300" />
-                            <span className="text-sm md:text-base">Entrega Rápida</span>
+
+                        <h1 className="text-5xl md:text-7xl font-bold text-dark-900 leading-[1.1] tracking-tight font-display">
+                            La Invitación que <span className="gradient-text">Gestiona tu Evento</span> por Ti
+                        </h1>
+
+                        <p className="text-xl md:text-2xl text-dark-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Diseños que enamoran a tus invitados y automatización que te ahorra horas de estrés.
+                            Confirmaciones, mapas y pases en piloto automático.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <button
+                                onClick={scrollToDemos}
+                                className="btn-primary group flex items-center justify-center gap-2 shadow-2xl"
+                            >
+                                <Play className="w-5 h-5 fill-current" />
+                                Ver Demos en Vivo
+                            </button>
+                            <button
+                                onClick={scrollToPricing}
+                                className="btn-outline border-dark-200 text-dark-700 hover:bg-dark-50 flex items-center justify-center gap-2"
+                            >
+                                Ver Precios
+                                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
                         </div>
-                        <div className="flex items-center gap-2 group cursor-default">
-                            <Heart className="w-6 h-6 text-primary-500 group-hover:scale-110 group-hover:fill-primary-500 transition-all duration-300" />
-                            <span className="text-sm md:text-base">100% Personalizado</span>
+
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-6 text-sm text-dark-500 font-medium">
+                            <div className="flex items-center gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-green-500" />
+                                RSVP Automático
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-green-500" />
+                                Mapas Inteligentes
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-green-500" />
+                                Pases Digitales
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center">
-                    <div className="w-1.5 h-3 bg-primary-500 rounded-full mt-2"></div>
+                    {/* Right Visual (Mockup) */}
+                    <div className="flex-1 relative animate-slide-up">
+                        <div className="relative mx-auto w-[280px] md:w-[320px] aspect-[9/19] bg-dark-900 rounded-[3rem] border-[12px] border-dark-800 shadow-2xl overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-accent-400 opacity-20"></div>
+
+                            {/* Mock Invitation Content */}
+                            <div className="relative p-6 space-y-6 flex flex-col items-center justify-center h-full text-white text-center">
+                                <div className="font-script text-3xl">J & M</div>
+                                <div className="text-sm tracking-widest uppercase">Nuestra Boda</div>
+                                <div className="text-4xl font-display font-bold">¡Nos Casamos!</div>
+                                <div className="w-full h-px bg-white/20"></div>
+                                <button className="bg-white text-primary-600 px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                                    Confirmar Asistencia
+                                </button>
+                            </div>
+
+                            {/* Status Bar */}
+                            <div className="absolute top-0 w-full h-6 flex justify-between px-6 pt-2">
+                                <div className="text-[10px] text-white">9:41</div>
+                                <div className="flex gap-1">
+                                    <div className="w-3 h-3 border border-white rounded-full"></div>
+                                    <div className="w-3 h-3 border border-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Floating Notification */}
+                        <div className="absolute top-1/2 -right-4 md:-right-12 translate-y-[-50%] bg-white p-4 rounded-2xl shadow-luxury border border-dark-50 flex items-center gap-4 animate-float max-w-[240px]">
+                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <Bell className="w-6 h-6 text-green-600" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold text-dark-900">Confirmación recibida</p>
+                                <p className="text-[10px] text-dark-500 leading-tight">Familia Pérez asistirá con 4 personas • Hace 2 min</p>
+                            </div>
+                        </div>
+
+                        {/* Decorative Elements */}
+                        <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent-100 rounded-full blur-2xl opacity-60"></div>
+                    </div>
                 </div>
             </div>
         </section>

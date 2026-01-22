@@ -1,67 +1,44 @@
-import { MessageCircle, ArrowRight, TrendingUp, Users, Clock } from 'lucide-react';
+import { Rocket, Sparkles, Plus } from 'lucide-react';
 
 export default function CTA() {
+    const scrollToPricing = () => {
+        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <section className="section-container bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-400 rounded-full filter blur-3xl"></div>
-            </div>
+        <section className="section-container pb-24 md:pb-32 bg-white">
+            <div className="relative bg-dark-900 rounded-[3rem] overflow-hidden p-12 md:p-24 text-center">
+                {/* Abstract Background Design */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-[120px] -z-10 animate-float"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-600/20 rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
 
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-                <div className="animate-fade-in">
-                    <p className="font-script text-2xl md:text-3xl text-primary-100 mb-4">
-                        ¿Listo para comenzar?
-                    </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                        Comienza a Crear Tu Invitación Hoy
-                    </h2>
-                    <p className="text-lg md:text-xl text-primary-100 mb-12 leading-relaxed max-w-2xl mx-auto">
-                        Déjanos ayudarte a crear una invitación digital que tus invitados recordarán.
-                        Contáctanos por WhatsApp y cuéntanos sobre tu evento.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button
-                            onClick={() => window.open('https://wa.me/5215512345678?text=Hola! Me gustaría crear una invitación digital', '_blank')}
-                            className="bg-white text-primary-700 px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group"
-                        >
-                            <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                            Contactar por WhatsApp
-                        </button>
-                        <button
-                            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary-700 transition-all duration-300 flex items-center gap-2 group"
-                        >
-                            Ver Precios
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
+                <div className="max-w-3xl mx-auto space-y-10 relative z-10 animate-fade-in">
+                    <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 text-primary-300 text-sm font-bold border border-white/10">
+                        <Rocket className="w-5 h-5" />
+                        Únete a +100 eventos exitosos
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
-                        <div className="animate-slide-up group cursor-default">
-                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                                <TrendingUp className="w-8 h-8 text-white group-hover:rotate-12 transition-transform duration-300" />
-                            </div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">100+</div>
-                            <div className="text-primary-100">Eventos Realizados</div>
-                        </div>
-                        <div className="animate-slide-up animation-delay-200 group cursor-default">
-                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                                <Users className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
-                            </div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">98%</div>
-                            <div className="text-primary-100">Satisfacción del Cliente</div>
-                        </div>
-                        <div className="animate-slide-up animation-delay-400 group cursor-default">
-                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                                <Clock className="w-8 h-8 text-white group-hover:rotate-180 transition-transform duration-500" />
-                            </div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
-                            <div className="text-primary-100">Soporte Disponible</div>
-                        </div>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white font-display leading-[1.1]">
+                        Tu Evento Merece una <br /> <span className="text-primary-400 italic">Gestión Premium</span>
+                    </h2>
+
+                    <p className="text-xl text-dark-300 leading-relaxed font-medium">
+                        No pierdas más tiempo persiguiendo confirmaciones. JoyLink lo hace por ti mientras tus invitados se quedan asombrados.
+                    </p>
+
+                    <div className="pt-6">
+                        <button
+                            onClick={scrollToPricing}
+                            className="btn-primary py-6 px-12 text-xl shadow-2xl bg-white text-dark-900 hover:bg-dark-50 animate-shimmer flex items-center justify-center gap-3 mx-auto"
+                        >
+                            <Plus className="w-6 h-6" />
+                            Crear mi Invitación Ahora
+                        </button>
+                        <p className="mt-8 text-dark-500 text-sm flex items-center justify-center gap-4">
+                            <span className="flex items-center gap-1"><Sparkles className="w-4 h-4" /> Configuración en 5 min</span>
+                            <span className="w-1.5 h-1.5 bg-dark-700 rounded-full"></span>
+                            <span className="flex items-center gap-1"><Sparkles className="w-4 h-4" /> Soporte Premium</span>
+                        </p>
                     </div>
                 </div>
             </div>

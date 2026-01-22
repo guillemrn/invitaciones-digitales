@@ -34,15 +34,15 @@
 
   /* Premium Button Styles */
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out active:scale-95;
+    @apply px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out active:scale-95 min-h-[48px];
   }
 
   .btn-accent {
-    @apply px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out active:scale-95;
+    @apply px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out active:scale-95 min-h-[48px];
   }
 
   .btn-outline {
-    @apply px-8 py-4 border-2 border-primary-500 text-primary-600 font-semibold rounded-full hover:bg-primary-50 transition-all duration-300 ease-out active:scale-95;
+    @apply px-8 py-4 border-2 border-primary-500 text-primary-600 font-semibold rounded-full hover:bg-primary-50 transition-all duration-300 ease-out active:scale-95 min-h-[48px];
   }
 
   /* Card Styles */

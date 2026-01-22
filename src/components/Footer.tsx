@@ -1,129 +1,86 @@
-import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, ChevronUp } from 'lucide-react';
+import { ShieldCheck, Mail, Globe, Sparkles } from 'lucide-react';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-dark-900 text-dark-300 py-12">
+        <footer className="bg-white border-t border-dark-50 pt-24 pb-12">
             <div className="section-container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
-                    {/* Brand */}
-                    <div>
-                        <h3 className="font-display text-2xl font-bold text-white mb-4">
-                            Invitaciones Digitales
-                        </h3>
-                        <p className="text-dark-400 leading-relaxed mb-4">
-                            Creamos experiencias digitales memorables para tus eventos más especiales.
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                    {/* Brand & Mission */}
+                    <div className="md:col-span-2 space-y-6">
+                        <div className="flex items-center gap-2 group cursor-pointer">
+                            <div className="w-10 h-10 bg-dark-900 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                                <Sparkles className="w-6 h-6 text-white" />
+                            </div>
+                            <span className="text-2xl font-bold font-display text-dark-900 tracking-tight">JoyLink</span>
+                        </div>
+                        <p className="text-dark-500 text-lg leading-relaxed max-w-sm">
+                            La plataforma premium para invitaciones digitales que automatiza la gestión de tus momentos más especiales.
                         </p>
-                        <div className="flex gap-4">
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 bg-dark-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:scale-110 hover:rotate-12 transition-all duration-300 group"
-                            >
-                                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                            </a>
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 bg-dark-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:scale-110 hover:rotate-12 transition-all duration-300 group"
-                            >
-                                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                            </a>
-                            <a
-                                href="https://wa.me/5215512345678"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 bg-dark-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:scale-110 hover:rotate-12 transition-all duration-300 group"
-                            >
-                                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                            </a>
+                        <div className="flex gap-4 items-center pt-2">
+                            <div className="flex -space-x-3">
+                                {[1, 2, 3, 4].map(i => (
+                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-dark-100 flex items-center justify-center overflow-hidden">
+                                        <div className={`w-full h-full bg-gradient-to-br ${i % 2 === 0 ? 'from-primary-200 to-accent-200' : 'from-accent-200 to-primary-200'}`}></div>
+                                    </div>
+                                ))}
+                            </div>
+                            <span className="text-sm font-bold text-dark-600">+10,000 Invitados gestionados</span>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="font-semibold text-white mb-4">Enlaces Rápidos</h4>
-                        <ul className="space-y-2">
-                            <li>
-                                <button
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                    className="hover:text-primary-400 transition-colors duration-300 flex items-center gap-2 group"
-                                >
-                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
-                                    Inicio
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="hover:text-primary-400 transition-colors duration-300 flex items-center gap-2 group"
-                                >
-                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
-                                    Paquetes
-                                </button>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-primary-400 transition-colors duration-300 flex items-center gap-2 group">
-                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
-                                    Galería
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-primary-400 transition-colors duration-300 flex items-center gap-2 group">
-                                    <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
-                                    Contacto
-                                </a>
-                            </li>
+                        <h4 className="font-bold text-dark-900 uppercase tracking-widest text-xs mb-8">Navegación</h4>
+                        <ul className="space-y-4">
+                            <li><a href="#demos" className="text-dark-500 hover:text-primary-600 transition-colors">Demos en Vivo</a></li>
+                            <li><a href="#how-it-works" className="text-dark-500 hover:text-primary-600 transition-colors">Cómo Funciona</a></li>
+                            <li><a href="#pricing" className="text-dark-500 hover:text-primary-600 transition-colors">Precios</a></li>
+                            <li><a href="#" className="text-dark-500 hover:text-primary-600 transition-colors">Event Planners</a></li>
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Contact & Support */}
                     <div>
-                        <h4 className="font-semibold text-white mb-4">Contacto</h4>
-                        <ul className="space-y-2">
-                            <li className="flex items-start gap-2 group">
-                                <Mail className="w-5 h-5 flex-shrink-0 mt-0.5 group-hover:text-primary-400 group-hover:scale-110 transition-all duration-300" />
-                                <a
-                                    href="mailto:hola@invitacionesdigitales.com"
-                                    className="hover:text-primary-400 transition-colors duration-300"
-                                >
-                                    hola@invitacionesdigitales.com
-                                </a>
+                        <h4 className="font-bold text-dark-900 uppercase tracking-widest text-xs mb-8">¿Necesitas ayuda técnica?</h4>
+                        <ul className="space-y-4">
+                            <li className="flex items-center gap-3 text-dark-500">
+                                <Mail className="w-5 h-5 text-primary-500" />
+                                <a href="mailto:hola@joylink.mx" className="hover:text-primary-600">hola@joylink.mx</a>
                             </li>
-                            <li className="flex items-start gap-2 group">
-                                <Phone className="w-5 h-5 flex-shrink-0 mt-0.5 group-hover:text-primary-400 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-                                <a
-                                    href="https://wa.me/5215512345678"
-                                    className="hover:text-primary-400 transition-colors duration-300"
-                                >
-                                    +52 55 1234 5678
-                                </a>
+                            <li className="flex items-center gap-3 text-dark-500">
+                                <Globe className="w-5 h-5 text-primary-500" />
+                                <span>joylink.mx</span>
                             </li>
-                            <li className="flex items-start gap-2 group">
-                                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 group-hover:text-primary-400 group-hover:scale-110 transition-all duration-300" />
-                                <span>Zona Metropolitana de Guadalajara</span>
+                            <li className="pt-4">
+                                <button className="flex items-center gap-2 text-primary-600 font-bold hover:underline">
+                                    Chat con Soporte (WhatsApp)
+                                </button>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="pt-8 border-t border-dark-800 text-center text-dark-500 text-sm">
-                    <p>
-                        © {currentYear} Invitaciones Digitales Premium. Todos los derechos reservados.
-                    </p>
-                    <p className="mt-2 flex items-center justify-center gap-2">
-                        Diseñado con
-                        <span className="inline-block text-primary-400 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-default">
-                            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </span>
-                        para crear momentos inolvidables
-                    </p>
+                {/* Legal & Trust */}
+                <div className="pt-12 border-t border-dark-50 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex items-center gap-6 text-sm font-medium text-dark-400">
+                        <a href="#" className="hover:text-dark-900">Privacidad</a>
+                        <a href="#" className="hover:text-dark-900">Términos</a>
+                        <span>© {currentYear} JoyLink</span>
+                    </div>
+
+                    {/* Trust Badges */}
+                    <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-2 px-4 py-2 bg-dark-50 rounded-lg text-dark-500 text-xs font-bold border border-dark-100">
+                            <ShieldCheck className="w-4 h-4 text-green-600" />
+                            Stripe Secure Pay
+                        </div>
+                        <div className="flex items-center gap-2 px-4 py-2 bg-dark-50 rounded-lg text-dark-500 text-xs font-bold border border-dark-100">
+                            <ShieldCheck className="w-4 h-4 text-green-600" />
+                            SSL Encrypted
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
