@@ -8,6 +8,7 @@ export default function Pricing() {
             description: 'La tarjeta de presentación digital perfecta para tu evento',
             launchPrice: 690,
             regularPrice: 890,
+            stripeLink: 'https://buy.stripe.com/test_00wfZjfwU3lEdCSfbM0gw00',
             features: [
                 'Página web de vista única',
                 'Diseño personalizado JoyLink',
@@ -25,6 +26,7 @@ export default function Pricing() {
             description: 'El centro de información completo para tu celebración',
             launchPrice: 1390,
             regularPrice: 1790,
+            stripeLink: 'https://buy.stripe.com/test_28EcN784s09s8iy4x80gw01',
             features: [
                 'Todo lo del paquete ESENCIAL',
                 'Página con múltiples secciones',
@@ -43,6 +45,7 @@ export default function Pricing() {
             description: 'La experiencia de lujo total para eventos especiales',
             launchPrice: 2990,
             regularPrice: 3990,
+            stripeLink: 'https://buy.stripe.com/test_eVq8wR2K81dweGW6Fg0gw02',
             features: [
                 'Todo lo del paquete INTERACTIVO',
                 'Sitio web con navegación interna',
@@ -119,7 +122,10 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <button
+                        <a
+                            href={plan.stripeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`w-full py-5 rounded-2xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 shadow-sm ${plan.highlighted
                                 ? 'bg-white text-dark-900 hover:bg-dark-50 animate-shimmer'
                                 : 'bg-dark-900 text-white hover:bg-dark-800'
@@ -127,7 +133,7 @@ export default function Pricing() {
                         >
                             Empezar con {plan.name}
                             <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 ))}
             </div>
